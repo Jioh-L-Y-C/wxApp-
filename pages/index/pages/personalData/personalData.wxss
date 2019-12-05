@@ -1,0 +1,70 @@
+/* pages/login/pages/personalData/personal data.wxss */
+.personal {
+  padding: 40rpx 40rpx 130rpx;
+}
+.personal input {
+  font-size: 24rpx;
+  color: #333;
+}
+.personal .placeholder-class {
+  font-size: 24rpx;
+  color: #C3CCD9;
+}
+.personal .bottom {
+  height: 150rpx;
+  width: 100%;
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background: #fff;
+  display: flex;
+  align-items: center;
+}
+.basic .title {
+  font-size: 28rpx;
+}
+.basic .form-item {
+  padding: 20rpx;
+  margin: 20rpx 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+  border: 1px solid #eee;
+  color: #C3CCD9;
+  background: #f9f9f9;
+}
+.basic .form-item .lable {
+  width: 125rpx;
+  font-size: 24rpx;
+  color: #333;
+}
+.basic .form-item .right-content {
+  padding-left: 20rpx;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.basic .form-item .right-content .upload-img {
+  width: 80rpx;
+  height: 80rpx;
+  border: 1px dashed #318AFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #318AFF;
+  background: #EAF3FF;
+}
+.basic .form-item .right-content .picker {
+  width: 100%;
+}
+.basic .form-item .right-content .picker text {
+  text-align: center;
+}
+.basic .form-item .right-content .getcode {
+  padding: 10rpx 20rpx;
+  border: 1px solid #eee;
+}

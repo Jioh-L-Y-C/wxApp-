@@ -1,0 +1,11 @@
+{
+  "usingComponents": { 
+    "van-button": "/ui/dist/button/index",
+    "van-cell": "/ui/dist/cell/index",
+    "van-cell-group" :"/ui/dist/cell-group/index",
+    "van-icon": "/ui/dist/icon/index",
+    "van-field": "/ui/dist/field/index"
+  },
+  "navigationBarBackgroundColor": "#3489FF",
+  "navigationBarTitleText": "首页"
+}

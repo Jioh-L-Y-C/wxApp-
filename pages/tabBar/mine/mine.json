@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "van-icon": "/ui/dist/icon/index",
+    "van-progress": "/ui/dist/progress/index"
+  },
+  "navigationBarTitleText": "我的",
+  "navigationBarBackgroundColor":"#3489FF",
+  "navigationBarTextStyle":"white",
+  "backgroundTextStyle": "light",
+  "backgroundColor":"#3489FF"
+}

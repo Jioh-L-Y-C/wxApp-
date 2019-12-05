@@ -1,0 +1,35 @@
+<view class="letter-box">
+  <view class="letter-left">
+    <view class="time">
+      2019年6月21日  10：28
+    </view>
+    <view class="content">
+      <view class="avatar">
+        <image mode="scaleToFill" src="https://img.yzcdn.cn/vant/cat.jpeg"/>
+      </view>
+      <view class="answer borderOther">
+          请问研修活动的协作文档如何操作？能否指导一下？谢谢！
+          <view class="triangle"></view>
+      </view>
+    </view>
+  </view>
+  <view class="letter-right">
+    <view class="time">
+      2019年6月21日  10：28
+    </view>
+    <view class="content">
+      <view class="answer borderOther">
+          请问研修活动的协作文档如何操作？能否指导一下？谢谢！
+          请问研修活动的协作文档如何操作？能否指导一下？谢谢！
+          <view class="triangle"></view>
+      </view>
+      <view class="avatar">
+          <image mode="scaleToFill" src="https://img.yzcdn.cn/vant/cat.jpeg"/>
+        </view>
+    </view>
+  </view>
+  <view class="letter-bottom">
+      <input class="letter-input" auto-focus placeholder="请输入内容"/>
+      <button class="sentBtn">发送</button>
+  </view>
+</view>

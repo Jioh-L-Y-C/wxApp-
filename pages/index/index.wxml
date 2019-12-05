@@ -1,0 +1,17 @@
+<!--pages/login/login.wxml-->
+
+<view class="login">
+
+  <view class="main">
+    <view class="user_img">
+      <view class="iconfont iconwx"></view>
+    </view>
+
+    <view class='content'>
+      <view class="content-text">申请获取以下权限</view>
+      <text>获得您的公开信息(昵称，头像等)</text>
+    </view>
+  <button  wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class="sq-btn " type="primary" style='margin-top:15%'>授权登录</button>
+  <view wx:else>请升级微信版本</view>
+  </view>
+</view>

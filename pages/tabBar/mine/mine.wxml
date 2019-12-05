@@ -1,0 +1,68 @@
+<view class="mine">
+  <!-- 头部 -->
+  <view class="head-box">
+    <navigator url="/pages/index/pages/personalData/personalData" class="myInfo">
+      <view class="content">
+        <view class="head-portrait">
+          <image mode="scaleToFill" src="{{userInfo.avatarUrl}}" />
+        </view>
+        <view class="mycontent">
+          <view class="nameBox">
+            <text class="name">{{userInfo.nickName}}</text>
+            <view class="level">蓝天初学</view>
+          </view>
+          <view class="progress">
+            <text class="word">资料完善度：49%</text>
+            <van-progress percentage="50" stroke-width="2" show-pivot="{{false}}" color="#99c4ff"
+              track-color="#5da1ff" />
+          </view>
+        </view>
+      </view>
+      <view class="arrow-icon">
+        <van-icon name="arrow" class="arrow" />
+      </view>
+    </navigator>
+  </view>
+  <!-- body -->
+  <view class="mine-centent-box">
+    <!-- 培训 -->
+    <view class="train-box">
+      <view class="train-list">
+        <navigator url="{{item.url}}" class="train-item" wx:for="{{trainData}}" wx:key="id">
+
+          <view class="train-item-icon {{item.className}}">
+            <image src="{{item.imgSrc}}"></image>
+          </view>
+          <view hover-class="navigator-hover">{{item.name}}</view>
+        </navigator>
+      </view>
+    </view>
+    <!-- 账户 -->
+    <view class="account-box">
+      <navigator url="{{item.url}}" class="list" wx:for="{{accountData}}" wx:key="id">
+        <view class="list-left">
+          <!-- <van-icon name="card" class="list-left-icon" /> -->
+          <view class="iconfont {{item.iconName}} list-left-icon"></view>
+          <view class="list-word">{{item.name}}</view>
+        </view>
+        <view class="list-right">
+          <view class="list-right-num" wx:if="{{item.integral}}">6897积分</view>
+          <van-icon name="arrow" class="arrow" class="list-right-icon" />
+        </view>
+      </navigator>
+    </view>
+    <!-- 意见反馈 -->
+    <view class="feedback-box">
+      <navigator url="{{item.url}}" class="list" wx:for="{{feedbackData}}" wx:key="id">
+        <view class="list-left">
+          <view class="iconfont {{item.iconName}} list-left-icon"></view>
+          <view class="list-word">{{item.name}}</view>
+        </view>
+        <view class="list-right">
+          <text wx:if="{{item.link_name}}" class="list-right-gray">{{item.link_name}}</text>
+          <van-icon name="arrow" class="arrow" class="list-right-icon" />
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>

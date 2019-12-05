@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "van-icon": "/ui/dist/icon/index"
+  },
+  "navigationBarTitleText": "蓝天小程序"
+}

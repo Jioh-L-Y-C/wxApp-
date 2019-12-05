@@ -1,0 +1,231 @@
+
+.x-box{
+  width: 100%;
+  height: 50rpx;
+  background: rgba(255,255,255,0.9);
+  position: fixed;
+  top: 0rpx;
+  z-index: 199;
+  height: 216rpx;  
+.nav{
+  width: 100%;
+  padding:47rpx 40rpx 0;
+  box-sizing: border-box;
+  position: absolute;
+  // background: #fff;
+  z-index: 100;
+  }
+}
+.home{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  padding-top: 152rpx;
+}
+
+
+
+
+.menu{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  .date{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    font-size: 40rpx;
+  }
+}
+.menu .menu-title{
+  width: 100%;
+  text-align: center;
+  color: #000000;
+  font-size: 36rpx;
+}
+
+.main{
+  padding: 0px 40rpx;
+  box-sizing: border-box;
+  .swiper{
+    width: 670rpx;
+    height: 320rpx;
+    margin-top: 66rpx;
+    box-sizing: border-box;
+    .swiper-box{
+      width: 100%;
+      height: 320rpx;
+    }
+    image{
+      width: 100%;
+      height: 320rpx;
+      border-radius: 18rpx;
+      vertical-align: middle;
+    }
+    .user-name{
+      position: absolute;
+      top: 59rpx;
+      left: 38rpx;
+    }
+    .tag{
+      padding: 9rpx 8rpx;
+      background: #FFC61C;
+      font-size: 18rpx;
+      color: #000;
+      border-radius: 0 15rpx 15rpx 15rpx;
+      margin-left: 17rpx;
+    }
+    view{
+      color: #fff;
+    }
+    .mark{
+      position: absolute;
+      top: 116rpx;
+      left: 39rpx;
+    }
+    .look-btn{
+      position: absolute;
+      top: 212rpx;
+      left: 39rpx;
+    }
+  }
+
+// 培训项目
+  .training-project{
+    padding-top: 20rpx;
+
+    .content-item{
+      width: 670rpx;
+      height: 256rpx;
+      background:var(--public_color1) ;
+      border-radius: 18rpx;
+      padding: 50rpx 40rpx 0;
+      box-sizing: border-box;
+      margin-top: 40rpx;
+      color: #fff;
+
+      .tag{
+        padding:6rpx 15rpx ;
+        background:rgba(255,255,255,0.2);
+        font-size: 20rpx;
+        border-radius: 16rpx;
+        margin-right: 15rpx;
+      }
+      .time{
+        font-size: 24rpx;
+      }
+      .centert{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+        font-size: 26rpx;
+        .project-name {
+          font-weight:bold;
+        }
+        .student-btn{
+          margin: 0;
+        }
+      }
+      .bottom{
+        display: flex;
+        .num{
+          font-size: 48rpx;
+        }
+        text-align: center;
+        .li-item:nth-child(1){
+          margin-right: 30rpx;
+        }
+        .mark{
+          font-size: 20rpx;
+        }
+      }
+
+    }
+    
+    .no-do{
+      background:var(--public_color2) ;
+      color: #000;
+      .centert{
+        .student-btn{
+          border: 1px solid #000;
+          color: #000;
+        }
+      }
+    }
+  }
+
+  //培训课程
+  .course-show{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap:wrap;
+    padding: 40rpx 0 80rpx;
+    .show-item{
+      width: 322rpx;
+      margin-top: 12rpx;
+      .item-box{
+        width: 100%;
+        border-radius: 18rpx;
+        overflow: hidden;
+        font-size: 0;
+      .show-img{
+        position: relative;
+        image{
+          width: 100%;
+          height: 180rpx;
+          border-radius: 18rpx;
+        }
+       .tag{
+         font-size: 20rpx;
+         color: #fff;
+         border-radius:18rpx 0 18rpx 0;
+         padding: 10rpx 16rpx;
+         position: absolute;
+         bottom: 9rpx;
+         right: 0;
+       } 
+      } 
+      
+      .mark{
+        .title{
+          margin: 20rpx 0 25rpx;
+          font-size: 26rpx;
+          font-weight: bold;
+        }
+        .money{
+          display: flex;
+          justify-content: space-between;
+          .f-big{
+            font-size: 32rpx;
+            font-weight: bold;
+            color: var(--public_color3);
+          }
+          .f-min{
+            font-size: 20rpx;
+            color: #C3CCD9;
+            text-decoration: line-through;
+          }
+          .bay-num{
+            text-decoration: none;
+          }
+        }
+      }
+      }
+    }
+  }
+}
+
+
+//渐变的背景色
+.change-bg-1{
+  background:linear-gradient(-90deg,rgba(51,219,181,1) 0%,rgba(86,242,207,1) 100%);
+}
+.change-bg-2{
+  background:linear-gradient(-90deg,rgba(255,198,28,1) 0%,rgba(255,219,112,1) 100%);
+}
+.change-bg-3{
+  background:linear-gradient(-90deg,rgba(204,204,204,1) 0%,rgba(236,236,236,1) 100%);
+}

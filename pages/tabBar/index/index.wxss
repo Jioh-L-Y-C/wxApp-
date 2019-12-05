@@ -1,0 +1,208 @@
+.x-box {
+  width: 100%;
+  height: 50rpx;
+  background: rgba(255, 255, 255, 0.9);
+  position: fixed;
+  top: 0rpx;
+  z-index: 199;
+  height: 216rpx;
+}
+.x-box .nav {
+  width: 100%;
+  padding: 47rpx 40rpx 0;
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 100;
+}
+.home {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  padding-top: 152rpx;
+}
+.menu {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.menu .date {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  font-size: 40rpx;
+}
+.menu .menu-title {
+  width: 100%;
+  text-align: center;
+  color: #000000;
+  font-size: 36rpx;
+}
+.main {
+  padding: 0px 40rpx;
+  box-sizing: border-box;
+}
+.main .swiper {
+  width: 670rpx;
+  height: 320rpx;
+  margin-top: 66rpx;
+  box-sizing: border-box;
+}
+.main .swiper .swiper-box {
+  width: 100%;
+  height: 320rpx;
+}
+.main .swiper image {
+  width: 100%;
+  height: 320rpx;
+  border-radius: 18rpx;
+  vertical-align: middle;
+}
+.main .swiper .user-name {
+  position: absolute;
+  top: 59rpx;
+  left: 38rpx;
+}
+.main .swiper .tag {
+  padding: 9rpx 8rpx;
+  background: #FFC61C;
+  font-size: 18rpx;
+  color: #000;
+  border-radius: 0 15rpx 15rpx 15rpx;
+  margin-left: 17rpx;
+}
+.main .swiper view {
+  color: #fff;
+}
+.main .swiper .mark {
+  position: absolute;
+  top: 116rpx;
+  left: 39rpx;
+}
+.main .swiper .look-btn {
+  position: absolute;
+  top: 212rpx;
+  left: 39rpx;
+}
+.main .training-project {
+  padding-top: 20rpx;
+}
+.main .training-project .content-item {
+  width: 670rpx;
+  height: 256rpx;
+  background: var(--public_color1);
+  border-radius: 18rpx;
+  padding: 50rpx 40rpx 0;
+  box-sizing: border-box;
+  margin-top: 40rpx;
+  color: #fff;
+}
+.main .training-project .content-item .tag {
+  padding: 6rpx 15rpx ;
+  background: rgba(255, 255, 255, 0.2);
+  font-size: 20rpx;
+  border-radius: 16rpx;
+  margin-right: 15rpx;
+}
+.main .training-project .content-item .time {
+  font-size: 24rpx;
+}
+.main .training-project .content-item .centert {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  font-size: 26rpx;
+}
+.main .training-project .content-item .centert .project-name {
+  font-weight: bold;
+}
+.main .training-project .content-item .centert .student-btn {
+  margin: 0;
+}
+.main .training-project .content-item .bottom {
+  display: flex;
+  text-align: center;
+}
+.main .training-project .content-item .bottom .num {
+  font-size: 48rpx;
+}
+.main .training-project .content-item .bottom .li-item:nth-child(1) {
+  margin-right: 30rpx;
+}
+.main .training-project .content-item .bottom .mark {
+  font-size: 20rpx;
+}
+.main .training-project .no-do {
+  background: var(--public_color2);
+  color: #000;
+}
+.main .training-project .no-do .centert .student-btn {
+  border: 1px solid #000;
+  color: #000;
+}
+.main .course-show {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 40rpx 0 80rpx;
+}
+.main .course-show .show-item {
+  width: 322rpx;
+  margin-top: 12rpx;
+}
+.main .course-show .show-item .item-box {
+  width: 100%;
+  border-radius: 18rpx;
+  overflow: hidden;
+  font-size: 0;
+}
+.main .course-show .show-item .item-box .show-img {
+  position: relative;
+}
+.main .course-show .show-item .item-box .show-img image {
+  width: 100%;
+  height: 180rpx;
+  border-radius: 18rpx;
+}
+.main .course-show .show-item .item-box .show-img .tag {
+  font-size: 20rpx;
+  color: #fff;
+  border-radius: 18rpx 0 18rpx 0;
+  padding: 10rpx 16rpx;
+  position: absolute;
+  bottom: 9rpx;
+  right: 0;
+}
+.main .course-show .show-item .item-box .mark .title {
+  margin: 20rpx 0 25rpx;
+  font-size: 26rpx;
+  font-weight: bold;
+}
+.main .course-show .show-item .item-box .mark .money {
+  display: flex;
+  justify-content: space-between;
+}
+.main .course-show .show-item .item-box .mark .money .f-big {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: var(--public_color3);
+}
+.main .course-show .show-item .item-box .mark .money .f-min {
+  font-size: 20rpx;
+  color: #C3CCD9;
+  text-decoration: line-through;
+}
+.main .course-show .show-item .item-box .mark .money .bay-num {
+  text-decoration: none;
+}
+.change-bg-1 {
+  background: linear-gradient(-90deg, #33dbb5 0%, #56f2cf 100%);
+}
+.change-bg-2 {
+  background: linear-gradient(-90deg, #ffc61c 0%, #ffdb70 100%);
+}
+.change-bg-3 {
+  background: linear-gradient(-90deg, #cccccc 0%, #ececec 100%);
+}

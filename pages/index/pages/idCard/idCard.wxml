@@ -1,0 +1,15 @@
+<view class="idcard">
+    <view class="body">
+        <view class="input"> 
+            <input  bindinput="bindKeyInput" placeholder="请输入身份证号"  placeholder-class="placeholder"  type="idcard" />
+
+        </view>
+        <view class="submit comfirm-btn" bind:tap="submitHandle">确定</view>
+    </view>
+
+    <view class="why">
+        <text class="title">为什么要绑定身份证？</text>
+        <text>1、如果您在蓝天远程教育网（PC端）注册过，微信小程序将自动关联您的帐号。</text>
+        <text>2、如果您未注册过蓝天远程教育网，那么将为您注册一个新的登录帐号。</text>
+    </view>
+</view>

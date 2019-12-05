@@ -1,0 +1,58 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/tabBar/index/index",
+    "pages/tabBar/mine/mine",
+    "pages/tabBar/information/information",
+    "pages/tabBar/information/pages/letterDetails/letterDetails"
+  ],
+  "subPackages": [
+    {
+      "root": "pages/myInfo/",
+      "pages": [
+      
+      ]
+    },
+    {
+      "root": "pages/home/",
+      "pages": [
+        "pages/projectHome/projectHome"
+      ]
+    }
+  ],
+  "window": {
+    "backgroundColor": "#e04c4c",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小程序",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "backgroundColor": "white",
+    "borderStyle": "white",
+    "selectedColor": "#3489FF",
+    "color": "#C3CCD9",
+    "list": [
+      {
+        "pagePath": "pages/tabBar/index/index",
+        "iconPath": "/static/tabs/home.png",
+        "selectedIconPath": "/static/tabs/home-a.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/tabBar/information/information",
+        "iconPath": "/static/tabs/chat.png",
+        "selectedIconPath": "/static/tabs/chat-a.png",
+        "text": "消息"
+      },
+      {
+        "pagePath": "pages/tabBar/mine/mine",
+        "iconPath": "/static/tabs/my.png",
+        "selectedIconPath": "/static/tabs/my-a.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

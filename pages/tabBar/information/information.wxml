@@ -1,0 +1,253 @@
+<wxs module="dateFr" src="../../../utils/filter.wxs"></wxs>
+<view class="information_box">
+  <!-- 头部tab -->
+  <view class="top-box">
+    <view class="information_tab">
+      <view class="train-item" wx:for="{{tabData}}" wx:key="index" data-id='{{item.id}}' bindtap='select'>
+        <view class="train-item-icon {{item.className}}">
+          <van-icon name="todo-list" class="icon" />
+          <view wx:if="{{item.news}}" class="news">{{item.news}}</view>
+        </view>
+        <view class="train-word">{{item.name}}</view>
+      </view>
+    </view>
+    <view class="info-word">
+      {{selectIndex==0?"通知列表":selectIndex==1?"消息列表":"私信列表"}}</view>
+  </view>
+  <!-- 主体内容 -->
+  <!-- 系统通知 -->
+  <view wx:if="{{selectIndex==0}}">
+    <i-swipeout wx:for="{{noticeData}}" wx:key="{{id}}" i-class="i-swipeout-demo-item" operateWidth="{{90}}"
+      data-id='{{item.id}}' bindtap="noticeClick" class="notice-content">
+      <view slot="content">
+        <view class="i-swipeout-des">
+          <view class="content-title">
+            <view class="i-swipeout-des-h2 notice-content-title {{item.is_read == 0?'':'blod'}}">{{item.title}}</view>
+            <view class="time">{{item.timeData}}</view>
+          </view>
+          <view wx:if="{{item.key}}" class="i-swipeout-des-detail {{item.is_show?'notice-word':'notice-word-show'}}">
+            <view class="content-word">{{item.is_show?item.newContent:item.content}}<view class="show-hidden"
+                bindtap="show" data-id='{{item.id}}'>{{item.is_show?'[展开]':'[收起]'}}</view>
+            </view>
+          </view>
+
+
+          <view wx:else class="i-swipeout-des-detail notice-word content-box">
+            <text class="content-word">{{item.content}}</text>
+            <view wx:if="{{item.type==2}}" class="btn_box">
+              <view class="btn gray" data-status="2" data-id='{{item.id}}' bindtap="sysConfirmMsg">拒接</view>
+              <view class="btn blue" data-status="1" data-id='{{item.id}}' bindtap="sysConfirmMsg">同意</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view slot="button" data-id='{{item.id}}' class="operation" bindtap="delect">
+        <view class="i-swipeout-demo-button"> 删除</view>
+      </view>
+    </i-swipeout>
+    <van-dialog id="van-dialog" />
+  </view>
+  <!-- 动态消息 -->
+  <view wx:elif="{{selectIndex==1}}">
+    <!-- 动态消息内容 -->
+    <i-swipeout wx:for="{{dynamicData.data}}" wx:key="id" i-class="i-swipeout-demo-item" operateWidth="{{90}}"
+      class="notice-content">
+      <!-- 笔记被评论type=1 -->
+      <view slot="content" bindtap="read" wx:if="{{item.type==1}}">
+        <view class="content-title">
+          <view class="i-swipeout-des-h2 notice-content-title {{item.flag?'':'blod'}}">
+            笔记被评论
+          </view>
+          <view class="time">{{dateFr.getDate(item.create_time,"-",2)}}</view>
+        </view>
+        <view class="i-swipeout-des">
+          <view class="i-swipeout-des-detail content-word dynamic-content">
+            <navigator class="font-color">
+              {{item.params.target_user_name}}
+            </navigator>
+            在课程
+            <navigator class="font-color">
+              {{item.params.course_name}}
+            </navigator>
+            中评论了您的笔记
+          </view>
+        </view>
+      </view>
+      <!-- 评论笔记被回复type=2 -->
+      <view slot="content" bindtap="read" wx:if="{{item.type==2}}">
+        <view class="content-title">
+          <view class="i-swipeout-des-h2 notice-content-title {{item.flag?'':'blod'}}">
+            评论笔记被回复
+          </view>
+          <view class="time">{{dateFr.getDate(item.create_time,"-",2)}}</view>
+        </view>
+        <view class="i-swipeout-des">
+          <view class="i-swipeout-des-detail content-word dynamic-content">
+            <navigator class="font-color">
+              {{item.params.target_user_name}}
+            </navigator>
+            在课程
+            <navigator class="font-color">
+              {{item.params.course_name}}
+            </navigator>
+            中回复了您的评论
+          </view>
+        </view>
+      </view>
+      <!-- 课堂提问被回答type=3 -->
+      <view slot="content" bindtap="read" wx:if="{{item.type==3}}">
+        <view class="content-title">
+          <view class="i-swipeout-des-h2 notice-content-title {{item.flag?'':'blod'}}">
+            课堂提问被回答
+          </view>
+          <view class="time">{{dateFr.getDate(item.create_time,"-",2)}}</view>
+        </view>
+        <view class="i-swipeout-des">
+          <view class="i-swipeout-des-detail content-word dynamic-content">
+            <navigator class="font-color">
+              {{item.params.target_user_name}}
+            </navigator>
+            在课程
+            <navigator class="font-color">
+              {{item.params.course_name}}
+            </navigator>
+            中回答了您的问题
+          </view>
+        </view>
+      </view>
+      <!-- 课堂回答被回复type=4 -->
+      <view slot="content" bindtap="read" wx:if="{{item.type==4}}">
+        <view class="content-title">
+          <view class="i-swipeout-des-h2 notice-content-title {{item.flag?'':'blod'}}">
+            课堂回答被回复
+          </view>
+          <view class="time">{{dateFr.getDate(item.create_time,"-",2)}}</view>
+        </view>
+        <view class="i-swipeout-des">
+          <view class="i-swipeout-des-detail content-word dynamic-content">
+            <navigator class="font-color">
+              {{item.params.target_user_name}}
+            </navigator>
+            在课程
+            <navigator class="font-color">
+              {{item.params.course_name}}
+            </navigator>
+            提问中对您的回答作了回复
+          </view>
+        </view>
+      </view>
+      <!-- 课程作业被批改type=5 -->
+      <view slot="content" bindtap="read" wx:if="{{item.type==5}}">
+        <view class="content-title">
+          <view class="i-swipeout-des-h2 notice-content-title {{item.flag?'':'blod'}}">
+            课堂作业被批改
+          </view>
+          <view class="time">{{dateFr.getDate(item.create_time,"-",2)}}</view>
+        </view>
+        <view class="i-swipeout-des">
+          <view class="i-swipeout-des-detail content-word dynamic-content">
+            您的课程作业
+            <navigator class="font-color">
+              {{item.params.user_work_name}}
+            </navigator>
+            被批改
+          </view>
+        </view>
+      </view>
+      <!-- 项目研修活动评论被回复type=6 -->
+      <view slot="content" bindtap="read" wx:if="{{item.type==6}}">
+        <view class="content-title">
+          <view class="i-swipeout-des-h2 notice-content-title {{item.flag?'':'blod'}}">
+            项目研修活动评论被回复
+          </view>
+          <view class="time">{{dateFr.getDate(item.create_time,"-",2)}}</view>
+        </view>
+        <view class="i-swipeout-des">
+          <view class="i-swipeout-des-detail content-word dynamic-content">
+            <navigator class="font-color">
+              {{item.params.target_user_name}}
+            </navigator>
+            在研修活动
+            <navigator class="font-color">
+              {{item.params.study_activity_name}}
+            </navigator>
+            中回复了您的评论
+          </view>
+        </view>
+      </view>
+      <!-- 活动作品被点评type=7 -->
+      <view slot="content" bindtap="read" wx:if="{{item.type==6}}">
+          <view class="content-title">
+            <view class="i-swipeout-des-h2 notice-content-title {{item.flag?'':'blod'}}">
+              
+            </view>
+            <view class="time">{{dateFr.getDate(item.create_time,"-",2)}}</view>
+          </view>
+          <view class="i-swipeout-des">
+            <view class="i-swipeout-des-detail content-word dynamic-content">
+              <navigator class="font-color">
+                {{item.params.target_user_name}}
+              </navigator>
+              在研修活动
+              <navigator class="font-color">
+                {{item.params.study_activity_name}}
+              </navigator>
+              中回复了您的评论
+            </view>
+          </view>
+        </view>
+
+
+      <!-- 被他人关注type=30 -->
+      <view slot="content" bindtap="read" wx:if="{{item.type==30}}">
+        <view class="content-title">
+          <view class="i-swipeout-des-h2 notice-content-title {{item.flag?'':'blod'}}">
+            被他人关注
+          </view>
+          <view class="time">{{dateFr.getDate(item.create_time,"-",2)}}</view>
+        </view>
+        <view class="i-swipeout-des">
+          <view class="i-swipeout-des-detail content-word dynamic-content">
+            <navigator class="font-color">
+              {{item.params.target_user_name}}
+            </navigator>
+            关注了您的个人空间
+          </view>
+        </view>
+      </view>
+      <view slot="button" class="operation" bindtap="delect">
+        <view class="i-swipeout-demo-button"> 删除</view>
+      </view>
+    </i-swipeout>
+    <van-dialog id="van-dialog" />
+  </view>
+  <!-- 个人私信 -->
+  <view wx:else>
+    <!-- 消息内容 -->
+    <i-swipeout wx:for="tabData" wx:key="id" i-class="i-swipeout-demo-item" operateWidth="{{90}}"
+      class="notice-content letter-content">
+      <view slot="content" bindtap="jumpTo">
+        <view class="letter-box">
+          <view class="avatar">
+            <image mode="scaleToFill" src="https://img.yzcdn.cn/vant/cat.jpeg" />
+          </view>
+          <view class="news-content">
+            <view class="news-top">
+              <view class="news-name">梁小满</view>
+              <view class="news-time">19:00</view>
+            </view>
+            <view class="news-bottom">
+              <view class="news-word ellipsis">听说腾讯、央视、虎扑那些都宣布暂停NBA转播.</view>
+              <view class="news-num">1</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view slot="button" class="operation" bindtap="delect">
+        <view class="i-swipeout-demo-button"> 删除</view>
+      </view>
+    </i-swipeout>
+    <van-dialog id="van-dialog" />
+  </view>
+
+</view>

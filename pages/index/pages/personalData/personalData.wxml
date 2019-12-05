@@ -1,0 +1,157 @@
+<view class="personal">
+  <form bindsubmit="submitForm">
+    <!-- 基本信息 -->
+    <view class="basic">
+      <view class="title">基本信息</view>
+      <view class="form-item">
+        <view class="lable">头像 :</view>
+        <view class="right-content">
+          <view class="upload-img">+</view>
+          <view>></view>
+        </view>
+      </view>
+      <view class="form-item">
+        <view class="lable"><text class="c-m3">*</text>姓名 :</view>
+        <view class="right-content">
+          <input type="text" name="truename" value="{{form.truename}}" bindinput="change_name"  placeholder="请输入真实姓名" placeholder-class="placeholder-class" />
+        </view>
+      </view>
+      <view class="form-item">
+        <view class="lable">性别 :</view>
+        <view class="right-content">
+          <radio-group class="radio-group" bindchange="radioChange">
+            <radio style="padding-right: 20rpx;" class="radio" wx:for-items="{{radioOptions}}" wx:key="name"
+              value="{{item.id}}" checked="{{item.checked}}">
+              <text>{{item.name}}</text>
+            </radio>
+          </radio-group>
+        </view>
+      </view>
+
+      <view class="form-item">
+        <view class="lable">学历 :</view>
+        <view class="right-content">
+          <picker style="width: 100%;" bindchange="bindPickerChange" value="{{educationalIndex}}" range-key="name"
+            range="{{educationalOptions}}">
+            <view class="picker">
+              <text wx:if="{{educationalIndex ==''}}">请选择学历</text>
+              <text wx:else>{{educationalOptions[educationalIndex].name}}</text>
+            </view>
+          </picker>
+          <view>></view>
+        </view>
+      </view>
+
+      <view class="form-item">
+        <view class="lable"><text class="c-m3">*</text>所在地区 : </view>
+        <view class="right-content">
+            <picker mode = "multiSelector"  bindchange="bindCustomPickerChange"  bindcolumnchange="bindCustomPickerColumnChange"  value="{{customIndex}}" range="{{onlyArray}}"  >
+            <view class="picker">
+              <text wx:if="{{region.length==0}}">请选择所在省/所在市/所在县</text>
+              <text wx:else>{{onlyArray[0][customIndex[0]]}}，{{onlyArray[1][customIndex[1]]}}，{{onlyArray[2][customIndex[2]]}}</text>
+            </view>
+          </picker>
+          <view>></view>
+        </view>
+      </view>
+
+
+      <view class="form-item">
+        <view class="lable"><text class="c-m3">*</text>联系地址 :</view>
+        <view class="right-content">
+            {{form.address}}
+          <input type="text" placeholder="请输入联系地址" name="address"  value="{{form.address}}" bindinput="change_address" placeholder-class="placeholder-class" />
+        </view>
+      </view>
+      <view class="form-item" wx:if="{{true}}">
+        <view class="lable"><text class="c-m3">*</text>手机 :</view>
+        <view class="right-content">
+          <view>
+            <input type="text" name="tel" placeholder="请输入常用手机号" value="{{form.tel}}" bindinput="change_tel" placeholder-class="placeholder-class" />
+          </view>
+          <!-- <navigator url="/pages/myInfo/pages/replace/replace?state=1" class="getcode">更换手机</navigator> -->
+          <view class="getcode">验证码</view>
+        </view>
+      </view>
+      <view class="form-item" >
+        <view class="lable"><text class="c-m3">*</text>邮箱 :</view>
+        <view class="right-content">
+          <input type="text" name="email" placeholder="请输入邮箱" value="{{form.email}}" placeholder-class="placeholder-class" bindinput="change_email" />
+          <!-- <navigator url="/pages/myInfo/pages/replace/replace?state=2" class="getcode">更换邮箱</navigator> -->
+        </view>
+      </view>
+      <view class="form-item">
+        <view class="lable">QQ :</view>
+        <view class="right-content">
+          <input type="text" placeholder="请输入QQ" placeholder-class="placeholder-class" />
+        </view>
+
+      </view>
+
+
+
+
+
+
+
+    </view>
+    <!-- 工作信息 -->
+    <view class="basic">
+      <view class="title">工作信息</view>
+      <view class="form-item">
+        <view class="lable"><text class="c-m3">*</text>工作单位 :</view>
+        <view class="right-content">
+          <input type="text" placeholder="请输入工作单位" value="{{form}}"  placeholder-class="placeholder-class" />
+        </view>
+      </view>
+
+      <view class="form-item">
+        <view class="lable"><text class="c-m3">*</text>职务 :</view>
+        <view class="right-content">
+          <picker style="width: 100%;" name="titleIndex" bindchange="bindPickerChange1" value="{{titleIndex}}" range-key="name"
+            range="{{titleOptions}}">
+            <view class="picker">
+              <text wx:if="{{titleIndex ==''}}">请选择职称：</text>
+              <text wx:else>{{titleOptions[titleIndex].name}}</text>
+            </view>
+          </picker>
+          <view>></view>
+        </view>
+      </view>
+
+      <view class="form-item">
+          <view class="lable"><text class="c-m3">*</text>任教学段 :</view>
+          <view class="right-content">
+            <picker style="width: 100%;" name="xueduanIndex" bindchange="bindPickerChange2" value="{{xueduanIndex}}" range-key="name"
+              range="{{levelOptions}}">
+              <view class="picker">
+                <text wx:if="{{xueduanIndex ==''}}">请选择任教学段：</text>
+                <text wx:else>{{levelOptions[xueduanIndex].name}}</text>
+              </view>
+            </picker>
+            <view>></view>
+          </view>
+        </view>
+
+        <view class="form-item">
+            <view class="lable"><text class="c-m3">*</text>任教学科 :</view>
+            <view class="right-content">
+              <picker style="width: 100%;" name="subjectIndex" bindchange="bindPickerChange3" value="{{subjectIndex}}" range-key="name"
+                range="{{courseOptions}}">
+                <view class="picker">
+                  <text wx:if="{{subjectIndex ==''}}">请选择任教学科：</text>
+                  <text wx:else>{{courseOptions[subjectIndex].name}}</text>
+                </view>
+              </picker>
+              <view>></view>
+            </view>
+          </view>
+
+    </view>
+
+    <view class="bottom">
+        <button class="sbumit-btn comfirm-btn" formType="submit">确定</button>
+    </view>
+  </form>
+
+</view>

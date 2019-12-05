@@ -1,0 +1,464 @@
+
+page{
+position: relative;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+margin: auto;
+z-index: 1;
+// overflow: hidden;
+//全局三大主色调颜色变量
+--public_color1: #3489FF;
+--public_color1_hover: #2a6ecc;
+--public_color2: #FFC61C;
+--public_color2_hover: #cc9e16;
+--public_color3: #ff1c51;
+--public_color3_hover: #cc1641;
+--public_color4: #58D182;
+--public_color5: #9ca6b5;
+--public_color6: #F5F7FA;
+
+//半透明背景色
+--opbj1:#EAF3FF;
+--opbj2:#FFF3EC;
+--opbj3:#FFECEC;
+--opbj4:#F1FCF5;
+ 
+ //字体主色调
+ .c-m1 {
+   color: var(--public_color1); //#3489FF蓝色
+ }
+ 
+ .c-m2 {
+   color: var(--public_color2); //#FFC61C黄色
+ }
+ 
+ .c-m3 {
+   color: var(--public_color3); //#ff1c51红色
+ }
+ .c-m4 {
+   color: #9ca6b5; //#C3CCD9灰色
+ }
+ 
+ .c-m5 {
+   color:var(--public_color4); //#C3CCD9绿色
+ }
+ .c-m6 {
+   color:var(--public_color6); //#F5F7FA浅灰色
+ }
+ 
+ //字体颜色
+ .c-fff {
+   color: #fff;
+ }
+ 
+ .c-ccc {
+   color: #ccc;
+ }
+ 
+ .c-333 {
+   color: #333;
+ }
+ 
+ .c-666 {
+   color: #666;
+ }
+ 
+ .c-999 {
+   color: #999;
+ }
+ //字体粗细
+ .fw600 {
+   font-weight: 600;
+ }
+ 
+ .fw400 {
+   font-weight: 400;
+ }
+ 
+ //对齐
+ .ta-left {
+   text-align: left;
+ }
+ 
+ .ta-right {
+   text-align: right;
+ }
+ 
+ .ta-center {
+   text-align: center;
+ }
+ 
+ //行高
+ .lh20 {
+   line-height: 20px;
+ }
+ 
+ .lh25 {
+   line-height: 25px;
+ }
+ 
+ .lh30 {
+   line-height: 30px;
+ }
+ 
+ .lh40 {
+   line-height: 40px;
+ }
+ 
+ //文本溢出(注意ie兼容性)
+ .ellipsis {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+ }
+
+ //背景主色调
+ .bg-m1 {
+   background-color: var(--public_color1); //#3489FF蓝色
+ }
+ 
+ .bg-m2 {
+   background-color: var(--public_color2); //#FFC61C黄色
+ }
+ 
+ .bg-m3 {
+   background-color: var(--public_color3); //#ff1c51红色
+ }
+ .bg-m4 {
+   background-color: var(--public_color5); //#ff1c51灰色
+ }
+ .bg-m6 {
+  background:var(--public_color6); //#F5F7FA浅灰色
+}
+ 
+ .bg-fff {
+   background-color: #fff;
+ }
+ //margin
+ .mt10{
+   margin-top: 10rpx;
+ }
+ .mr10{
+   margin-right: 10rpx;
+ }
+ .mt20{
+   margin-top: 20rpx;
+ }
+//padding
+.pt10{
+  padding-top: 10rpx;
+}
+.pt15{
+  padding-top: 15rpx;
+}
+.pt20{
+  padding-top: 20rpx;
+}
+.pl10{
+  padding-left: 10rpx;
+}
+.pl15{
+  padding-left: 15rpx;
+}
+.pl20{
+  padding-left: 20rpx;
+}
+.pr10{
+  padding-right: 10rpx;
+}
+.pr15{
+  padding-right: 15rpx;
+}
+ //网页底色
+ .web-bg1 {
+   background-color: #f0f0f0;
+ }
+ 
+ .web-bg2 {
+   background-color: #f7f7f7;
+ }
+ 
+ .web-bg3 {
+   background-color: #f5f7fa;
+ }
+ 
+ //块级
+ .d-block {
+   display: block;
+ }
+ 
+ .d-inline {
+   display: inline-block;
+ }
+ 
+ .d-flex {
+   display: flex;
+ }
+ 
+ //定位
+ .pr {
+   position: relative;
+ }
+ // 浮动
+ .f-l{
+   float: left;
+ }
+ .f-r{
+   float: right;
+ }
+ //跳转按钮
+ .navigator-btn{
+      font-size: 20rpx;
+      color: #fff;
+      border: 1px solid #fff;
+      border-radius: 30rpx;
+      
+      text-align: center;
+      line-height: 24rpx;
+      display: inline-block;
+      padding: 14rpx 26rpx;
+      box-sizing: border-box;
+      margin-top: 27rpx;
+ }
+.navigator-btn2{
+  border-radius: 30rpx;
+  font-size: 24rpx;
+  color: #000000;
+  padding: 14rpx 26rpx;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+//布局
+.content{
+  padding: 0 40rpx;
+  box-sizing: border-box;
+}
+//学习的状态 未学习 一开始 已结束
+//渐变的背景色
+.change-bg-1{
+  background:linear-gradient(-90deg,rgba(51,219,181,1) 0%,rgba(86,242,207,1) 100%);
+}
+.change-bg-2{
+  background:linear-gradient(-90deg,rgba(255,198,28,1) 0%,rgba(255,219,112,1) 100%);
+}
+.change-bg-3{
+  background:linear-gradient(-90deg,rgba(204,204,204,1) 0%,rgba(236,236,236,1) 100%);
+}
+//学习中
+.status-study1{
+  width:88rpx;
+  height:40rpx;
+  background:linear-gradient(-90deg,rgba(51,219,181,1) 0%,rgba(86,242,207,1) 100%);
+  border-radius:18rpx 0px 18rpx 0px;
+  text-align: center;
+  color: #fff;
+  font-size: 20rpx;
+  line-height: 40rpx;
+}
+//未开始
+.status-study2{
+  width:88rpx;
+  height:40rpx;
+  background:linear-gradient(-90deg,rgba(255,198,28,1) 0%,rgba(255,219,112,1) 100%);
+  border-radius:18rpx 0px 18rpx 0px;
+  text-align: center;
+  color: #fff;
+  font-size: 20rpx;
+  line-height: 40rpx;
+}
+// 已完成
+.status-study3{
+  width:88rpx;
+  height:40rpx;
+  line-height: 40rpx;
+  color: #fff;
+  font-size: 20rpx;
+  background:linear-gradient(-90deg,rgba(204,204,204,1) 0%,rgba(236,236,236,1) 100%);
+  border-radius:18rpx 0px 18rpx 0px;
+  text-align: center;
+}
+
+}
+
+//不同背景色 字体色的图标
+.icon-box{
+  width: 88rpx;
+  height: 88rpx;
+  font-size: 32rpx;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 30rpx;
+}
+.icon-status1{
+  background: var(--opbj1);
+  color: var(--public_color1);
+}
+.icon-status2{
+  background: var(--opbj2);
+  color: var(--public_color2);
+}
+.icon-status3{
+  background: var(--opbj3);
+  color: var(--public_color3);
+}
+.icon-status4{
+  background: var(--opbj4) !important;
+  color: var(--public_color4) !important;
+}
+
+//搜索框 第一种
+// <view class="search-content">
+// <van-icon name="search" class='search-icon' />
+// <input placeholder-style="color:#C3CCD9;font-size:24rpx" class="search-input" auto-focus placeholder="请输入资源名称" />
+// </view>
+.search-content{
+  position: relative;
+  padding: 40rpx;
+  .search-input{
+    height: 72rpx;
+    background: #F5F7FA;
+    padding-left: 75rpx;
+    box-sizing: content-box;
+  }
+  .search-icon{
+    position: absolute;
+    font-size: 32rpx;
+    color: #C3CCD9;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 65rpx;
+  }
+}
+
+//搜索框 第2种
+// <view class='fiter-form'>
+// <view class="input-box">
+//       <van-icon name="search" class='search-icon' />
+//     <input type="text" class='search-ipt'  placeholder-style="color:#C3CCD9;font-size:24rpx"  placeholder="请输入工作坊名称"  />
+// </view>
+
+// <view class="select-handle">
+//     <van-icon class="select-icon" name="gem-o" />
+// </view>
+// </view>
+
+.fiter-form{
+  display: flex;
+  justify-content: space-between;
+  color: #9CA6B5;
+  padding: 40rpx;
+  // padding: 0 40rpx;
+  background-color: #fff;
+  width: 100%;
+  z-index: 100;
+  .input-box{
+    position: relative;
+    .search-icon{
+      position: absolute;
+      font-size: 32rpx;
+      color: #C3CCD9;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 40rpx;
+      
+    }
+    .search-ipt{
+      display: block;
+      padding-left: 75rpx;
+      background: #F5F7FA;
+      line-height: 72rpx;
+      height: 72rpx;
+      width: 558rpx;
+      border-radius: 36rpx;
+      box-sizing: border-box;
+    }
+  }
+  .select-handle{
+    width: 72rpx;
+    height: 72rpx;
+    border-radius: 50%;
+    background: #F5F7FA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .select-icon{
+      font-size: 32rpx;
+      vertical-align: middle;
+    }
+  }
+}
+
+//清除滚动条 滑动框的
+::-webkit-scrollbar{
+  width: 0 !important;
+  height: 0 !important;
+  color: transparent !important;
+}
+
+//确定的按钮
+.comfirm-btn{
+  width: 670rpx !important;
+  height: 88rpx !important;
+  line-height: 88rpx !important;
+  color: #fff;
+  font-size: 24rpx;
+  text-align: center;
+  border-radius: 44rpx;
+  background: #3489FF;
+  padding: 0 !important;
+}
+
+  //灰色的 | 
+  .grey-after{
+    position: relative;
+    &::after{
+      content: "";
+      width:1px;
+      height:18rpx;
+      background:rgba(195,204,217,1);
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+    }
+  }
+
+
+  //底部按钮 一个灰 -一个蓝 固定在底部
+   //底部的按钮 -->
+  // <view class="bottom-btn">
+  //     <view class="btn-need filter-btn c-m4" bindtap="downHandle">下载文档</view>
+  //     <view class="btn-need bg-m1 c-fff">
+  //       <navigator url="" bindtap="eitdHandle">编辑文档</navigator>
+  //     </view>
+  // </view>
+.bottom-btn{
+  width: 100%;
+  padding: 20rpx 0 20rpx;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  .btn-need{
+    width: 322rpx;
+    text-align: center;
+    font-size: 28rpx;
+    line-height: 88rpx;
+    height: 88rpx;
+    height: 88rpx;
+    border-radius: 44rpx;
+  }
+  .filter-btn{
+    background: #F5F7FA;
+  }
+}

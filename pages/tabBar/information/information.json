@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-icon": "/ui/dist/icon/index",
+    "van-checkbox": "/ui/dist/checkbox/index",
+    "van-dialog": "/ui/dist/dialog/index",
+    "van-button": "/ui/dist/button/index",
+    "i-swipeout": "/ui/iviewdist/swipeout/index"
+  },
+  "navigationBarTitleText": "消息"
+}
